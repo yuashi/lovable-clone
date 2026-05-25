@@ -1,0 +1,91 @@
+/* Global reset and base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #f0f2f5;
+  height: 100%;
+}
+
+/* Ensure all elements inherit box-sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Center the main app container */
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Calculator container – adjust as needed by the component */
+.app, .app-container {
+  max-width: 400px;
+  width: 90vw;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Display area */
+.display {
+  font-size: 2rem;
+  text-align: right;
+  padding: 10px 12px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  min-height: 48px;
+}
+
+/* Button grid – assumes a wrapper with class .buttons */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Individual button styles */
+button {
+  padding: 15px;
+  font-size: 1.2rem;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover,
+button:focus {
+  background: #d5d5d5;
+  outline: none;
+  transform: translateY(-2px);
+}
+
+/* Specific button variants – you can extend as needed */
+button.operator {
+  background: #ff9500;
+  color: #fff;
+}
+
+button.operator:hover,
+button.operator:focus {
+  background: #e08900;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}

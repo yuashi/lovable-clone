@@ -1,0 +1,3 @@
+__pycache__/
+.env
+generated_project/node_modules/
